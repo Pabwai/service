@@ -1,13 +1,11 @@
 package com.webservice.service.endpoint;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.IOException;
 
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
-import org.springframework.ws.soap.addressing.server.annotation.Action;
 
 import com.webservice.service.reqservice.QuestionGateWay;
 
@@ -24,15 +22,22 @@ public class WebserviceEndpoint {
 	@ResponsePayload
 	 public GateWayResponse getDataGateWay(@RequestPayload GateWayRequest request) {
 		
-		Map<String,Object> map = new HashMap<String,Object>();    
-		
-		map.put("GateWayRequest", request);
-		
-		QuestionGateWay question = new QuestionGateWay();
-		question.Question(map);
-		
 		GateWayResponse response = new GateWayResponse();
 	    response.setResultXML("SUCCESS");	 
+		QuestionGateWay question = new QuestionGateWay();
+		
+		try {
+			question.BroadcastQuestion(request);
+			return response;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
 	    return response;
 	  }
 }
