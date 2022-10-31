@@ -22,12 +22,11 @@ public class WebserviceEndpoint {
 	@ResponsePayload
 	 public GateWayResponse getDataGateWay(@RequestPayload GateWayRequest request) {
 		
-		GateWayResponse response = new GateWayResponse();
-	    response.setResultXML("SUCCESS");	 
-		QuestionGateWay question = new QuestionGateWay();
+		GateWayResponse response = new GateWayResponse();	   
+		QuestionGateWay question = new QuestionGateWay();		 
 		
 		try {
-			question.BroadcastQuestion(request);
+			 response.setResultXML(question.BroadcastQuestion(request));
 			return response;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
