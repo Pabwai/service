@@ -1,4 +1,4 @@
-package com.webservice.service.endpoint;
+package com.webservice.service.config;
 
 import java.util.Properties;
 
