@@ -12,8 +12,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.server.ResponseStatusException;
 import com.google.gson.Gson;
+import com.webservice.service.entite.QuestionReqestService;
+import com.webservice.service.entite.UserService;
 
-import premium.service.gen.GateWayRequest;
+import premium.service.gen.GetGateWayRequest;
 
 
 public class QuestionGateWay {
@@ -22,15 +24,18 @@ public class QuestionGateWay {
 	
 	
 	
-	public String BroadcastQuestion(GateWayRequest request) throws IOException, InterruptedException {	
+	public String BroadcastQuestion(UserService userService,QuestionReqestService questionReqestService) throws IOException, InterruptedException {	
 		 
 		
-	     return Authentication(request);
+		Gson gson = new Gson();
+		gson.toJson(userService.toString());
+		System.out.println(gson);
+	    return "Send Complete";
 		
 	}
 	
 	@ResponseStatus
-	public String Authentication(GateWayRequest data){	
+	public String Authentication(GetGateWayRequest data){	
 		
 		HashMap<String, String> userlogin = new HashMap<String, String>();
 		HttpResponse<String> response = null;

@@ -80,7 +80,7 @@
 			        </execution>
 			    </executions>
 			    <configuration>
-			        <sources> ${project.basedir}/src/main/resources/gateway.xsd</sources>			        
+			        <sources> ${project.basedir}/src/main/resources/soapservicexml.xsd</sources>			        
 			    </configuration>
 			</plugin>
 		</plugins>
