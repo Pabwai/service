@@ -1,8 +1,5 @@
 package com.webservice.service.model;
 
-import org.springframework.stereotype.Service;
-
-@Service
 public class ResponseMessageToPremium {
 		String status;
 		String process;
@@ -15,5 +12,7 @@ public class ResponseMessageToPremium {
 		String requestNo;
 		String ansCompany;
 		String uniqueID;
+		
+		
 		
 }

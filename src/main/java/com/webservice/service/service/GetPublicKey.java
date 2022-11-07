@@ -12,12 +12,12 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.google.gson.JsonObject;
 
-public class PublicKeyX509 {
+public class GetPublicKey {
 	
-	private static final String PublicUri  = "https://httpbin.org/anything";	
+	private static final String PublicUri  = "https://api.insure.co.th/PKI/PublicKey";	
 	
 	@ResponseStatus
-	public String GetPublicKey(String companyCode){			
+	public String PublicKey(String companyCode){			
 		
 		JsonObject model = new JsonObject();
 		

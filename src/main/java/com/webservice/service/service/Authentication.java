@@ -13,7 +13,7 @@ import com.google.gson.JsonObject;
 
 public class Authentication {
 	
-	private static final String TokenUri  = "https://httpbin.org/anything";	
+	private static final String TokenUri  = "https://api-uat.insure.co.th/token/";	
 	
 	@ResponseStatus
 	public String AuthenticationToken(String username,String password,String companyCode){			
